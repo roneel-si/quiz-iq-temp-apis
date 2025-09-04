@@ -62,28 +62,24 @@ app.get("/api/v1/generate-trivia", async (req, res) => {
 		let title = req.query.title;
 
 		if (!title) {
-			return res
-				.json({
-					data: {
-						messages: "Title is required in query string",
-					},
-					meta: {},
-				})
-				.status(403);
+			return res.status(403).json({
+				data: {
+					messages: "Title is required in query string",
+				},
+				meta: {},
+			});
 		}
 		if (
 			!quiz_token ||
 			!title ||
 			parseInt(quiz_token) + 1 * 60 * 1000 < parseInt(+new Date())
 		) {
-			return res
-				.json({
-					data: {
-						messages: "Authorization Error. Token Expired",
-					},
-					meta: {},
-				})
-				.status(403);
+			return res.status(403).json({
+				data: {
+					messages: "Authorization Error. Token Expired",
+				},
+				meta: {},
+			});
 		}
 		res.json({
 			data: {
