@@ -40,11 +40,9 @@ app.get("/", (req, res) => {
 // POST endpoint to generate signed URL
 app.post("/api/v1/generate-signed-url", async (req, res) => {
 	try {
-		const { fileName, fileType, expiresIn = 3600 } = req.body;
-
 		return res.json({
 			data: {
-				signed_token: "1234567890",
+				signed_token: +new Date(),
 			},
 			meta: {},
 		});
@@ -58,8 +56,35 @@ app.post("/api/v1/generate-signed-url", async (req, res) => {
 });
 
 // POST endpoint to get trivia questions
-app.post("/api/v1/generate-trivia", async (req, res) => {
+app.get("/api/v1/generate-trivia", async (req, res) => {
 	try {
+		let { quiz_token } = req.headers;
+		let title = req.query.title;
+
+		if (!title) {
+			return res
+				.json({
+					data: {
+						messages: "Title is required in query string",
+					},
+					meta: {},
+				})
+				.status(403);
+		}
+		if (
+			!quiz_token ||
+			!title ||
+			parseInt(quiz_token) + 1 * 60 * 1000 < parseInt(+new Date())
+		) {
+			return res
+				.json({
+					data: {
+						messages: "Authorization Error. Token Expired",
+					},
+					meta: {},
+				})
+				.status(403);
+		}
 		res.json({
 			data: {
 				count: 30,
