@@ -83,72 +83,77 @@ app.get("/api/v1/generate-trivia", async (req, res) => {
 		}
 		res.json({
 			data: {
-				count: 5,
+				count: 6,
 				items: [
 					{
-						id: "AC2025-Q1",
+						id: "AC2025_001",
 						question:
-							"What sport is primarily contested in the Asia Cup tournament?",
+							"The Asia Cup tournament, which is scheduled to take place in 2025, is primarily contested in which sport?",
 						answers: [
 							"Football",
-							"Cricket",
 							"Basketball",
-							"Badminton",
+							"Cricket",
+							"Field Hockey",
 						],
-						answerToken: "alwgFEVZ5RBk1nluWeRi1w==",
+						answerToken:
+							"U2FsdGVkX19qBgKZDuwH2tei7K6cNXL64ES6DcWxxJKgqmkBF+K1S6E7U1GcQPkr",
+						correctIndex: 2,
+					},
+					{
+						id: "AC2025_002",
+						question:
+							"Which of these governing bodies is responsible for organizing the Asia Cup tournament, including the 2025 edition?",
+						answers: [
+							"International Cricket Council (ICC)",
+							"Asian Football Confederation (AFC)",
+							"Asian Cricket Council (ACC)",
+							"Olympic Council of Asia (OCA)",
+						],
+						answerToken:
+							"U2FsdGVkX187ofcSIKEkPcXHCgYwxGQFQ4VmtX6N44lVgUpp/0vEA5sbEdJ7F5xe",
+						correctIndex: 2,
+					},
+					{
+						id: "AC2025_003",
+						question:
+							"Historically, which nation holds the record for the most titles won in the Asia Cup tournament, preceding the 2025 event?",
+						answers: [
+							"Pakistan",
+							"India",
+							"Sri Lanka",
+							"Bangladesh",
+						],
+						answerToken:
+							"U2FsdGVkX1+lxB677YU9gTiy75+rcGrbjjYu299YigAbNlVssFexO/BAysnhxoS2",
 						correctIndex: 1,
 					},
 					{
-						id: "AC2025-Q2",
+						id: "AC2025_004",
 						question:
-							"How often is the Cricket Asia Cup typically held?",
+							"The Asia Cup tournament is generally held how often, setting the stage for events like the 2025 edition?",
 						answers: [
 							"Every year",
 							"Every two years",
 							"Every three years",
 							"Every four years",
 						],
-						answerToken: "aP6ZXlciKt7sM7UfbTIp+Q==",
+						answerToken:
+							"U2FsdGVkX19u2BWVOSlT60oPjUIVPqG21O42YeCzmHoD9k4e9Okw2Jju0Ryv2p0N",
 						correctIndex: 1,
 					},
 					{
-						id: "AC2025-Q3",
+						id: "AC2025_005",
 						question:
-							"Which team has won the most titles in the history of the Cricket Asia Cup?",
+							"The format of the Asia Cup, such as the upcoming 2025 edition, often alternates between One Day International (ODI) and Twenty20 International (T20I) to prepare teams for which type of major international event?",
 						answers: [
-							"Pakistan",
-							"Sri Lanka",
-							"India",
-							"Bangladesh",
+							"Test series championships",
+							"Global T20 leagues",
+							"The Olympic Games",
+							"ICC global limited-overs tournaments",
 						],
-						answerToken: "019H1YSFHW61rgduLtcnOg==",
-						correctIndex: 2,
-					},
-					{
-						id: "AC2025-Q4",
-						question:
-							"The Cricket Asia Cup has been played in which of the following formats?",
-						answers: [
-							"Only T20I",
-							"Only ODI",
-							"Both ODI and T20I",
-							"Only Test Cricket",
-						],
-						answerToken: "bI1Yb5D1ciSulaZRJgzjlg==",
-						correctIndex: 2,
-					},
-					{
-						id: "AC2025-Q5",
-						question:
-							"Which cricketing body is responsible for organizing the Asia Cup tournament?",
-						answers: [
-							"International Cricket Council (ICC)",
-							"Asian Cricket Council (ACC)",
-							"Board of Control for Cricket in India (BCCI)",
-							"Pakistan Cricket Board (PCB)",
-						],
-						answerToken: "dQvguKwA3DmMd5XJe8eoEQ==",
-						correctIndex: 1,
+						answerToken:
+							"U2FsdGVkX19vTNWDiX+1EvwNnGs3u5ufbq94LoOEW31xdlSOig+kQVRfFjMyP0bS",
+						correctIndex: 3,
 					},
 				],
 			},
